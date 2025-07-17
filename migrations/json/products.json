@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Wireless Mouse",
+        "price": 149000.00,
+        "description": "Ergonomic wireless mouse with 3 adjustable DPI levels and silent click.",
+        "quantity": 25
+    },
+    {
+        "name": "Mechanical Keyboard",
+        "price": 299000.00,
+        "description": "RGB backlit mechanical keyboard with customizable keys and anti-ghosting.",
+        "quantity": 15
+    }
+]
