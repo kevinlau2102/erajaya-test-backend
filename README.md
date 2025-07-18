@@ -1,6 +1,38 @@
 # erajaya-test-backend
 Erajaya Technical Test - Backend
 
+Proyek ini menggunakan pendekatan **Clean Architecture**, yang memisahkan kode berdasarkan tanggung jawabnya ke dalam beberapa layer utama:
+
+**1. Delivery Layer (controller)**
+Berfungsi sebagai titik masuk aplikasi. Di sinilah request dari client diterima dan response dikembalikan.
+
+**2. Usecase Layer (service)**
+Berisi logika bisnis utama aplikasi. Layer ini mengatur alur proses dan menggabungkan berbagai komponen agar bekerja sama.
+
+**3. Repository Layer (repository)**
+Bertanggung jawab atas akses ke data (misalnya: database, cache). Layer ini menjadi jembatan antara usecase dan sumber data aktual.
+
+**4. Entity/Model Layer**
+Mendefinisikan struktur data dan aturan bisnis dasar (entity) yang digunakan di seluruh lapisan.
+
+**5. Config & Middleware**
+Mengelola konfigurasi environment, koneksi database, Redis, serta middleware seperti authentication, logging, dan recovery.
+
+**Why Clean Architecture?**
+Beberapa alasan memilih Clean Architecture:
+
+**1. Separation of Concerns**
+Memisahkan logika bisnis dari teknologi (seperti database dan framework), sehingga lebih mudah untuk mengembangkan dan menguji bagian-bagian aplikasi secara terpisah.
+
+**2. Maintainability**
+Struktur yang jelas memudahkan dalam menambahkan fitur baru atau memperbaiki bug tanpa mengganggu bagian lain dari aplikasi.
+
+**3. Scalability**
+Aplikasi lebih siap untuk tumbuh dan menangani kompleksitas lebih besar seiring waktu, karena arsitektur sudah modular dari awal.
+
+**4. Framework-agnostic**
+Arsitektur ini tidak bergantung pada framework tertentu seperti Gin, jadi jika ingin mengganti framework, tidak perlu mengubah logika bisnis utama.
+
 ## How To Use
 1. Clone the repository
   ```bash
