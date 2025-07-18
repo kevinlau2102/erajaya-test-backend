@@ -30,9 +30,131 @@ There are 2 ways to do running
   ```
 
 ## List API
-### GET /products
+
+You can try the API using this Postman collection: https://api.postman.com/collections/25822863-2feafd6d-19ff-40ce-a9d2-85d9024a6015?access_key=PMAT-01K0DD79WE6XQNMCJ1V119SSSP
+
+### 1. **POST** `/api/v1/user
+
+Register a new user.
+
+**Request Body:**
+```json
+{
+    "name": "Kevin Laurence",
+    "telp_number": "08123456789",
+    "email": "kevinlaurence@gmail.com",
+    "password": "12345678"
+}
+```
+
+**Response:**
+```json
+{
+    "status": 200,
+    "message": "success create user",
+    "data": {
+        "id": "56c281ca-abf4-40d2-8149-f58662b5d9fa",
+        "name": "Kevin Laurence",
+        "email": "kevinlaurence@gmail.com",
+        "telp_number": "08123456789",
+        "role": "user"
+    }
+}
+```
+
+### 2. **POST** `/api/v1/user/login
+
+Login to get access token and refresh token.
+
+**Request Body:**
+```json
+{
+    "email": "kevinlaurence@gmail.com",
+    "password": "12345678"
+}
+```
+
+**Response:**
+```json
+{
+    "status": 200,
+    "message": "success login",
+    "data": {
+        "access_token": "...",
+        "refresh_token": "...",
+        "role": "user"
+    }
+}
+```
+
+### 3. **POST** `/api/v1/user/refresh
+
+API Refresh token to get a new access token when expired.
+
+**Request Body:**
+```json
+{
+    "refresh_token": "..."
+}
+```
+
+**Response:**
+```json
+{
+    "status": 200,
+    "message": "successfully refreshed token",
+    "data": {
+        "access_token": "...",
+        "refresh_token": "...",
+        "role": "user"
+    }
+}
+```
+
+### 4. **POST** `/api/v1/product`
+
+Create a new product.
+
+**Headers:**
+```
+Authorization: Bearer <your_token_here>
+Content-Type: application/json
+```
+
+**Request Body:**
+```json
+{
+    "name": "Wireless Mouse",
+    "description": "Ergonomic wireless mouse with 3 adjustable DPI levels and silent click.",
+    "price": 149000,
+    "quantity": 25
+}
+```
+
+**Response:**
+```json
+{
+    "status": 200,
+    "message": "success create product",
+    "data": {
+        "id": "a3fffe22-21bb-47de-a87e-3371ad12606a",
+        "name": "Wireless Mouse",
+        "description": "Ergonomic wireless mouse with 3 adjustable DPI levels and silent click.",
+        "price": 149000,
+        "quantity": 25
+    }
+}
+```
+
+### 5. **GET** `/api/v1/product`
 
 Get all products with pagination, sorting, and search.
+
+**Headers:**
+```
+Authorization: Bearer <your_token_here>
+Content-Type: application/json
+```
 
 **Query Parameters:**
 - `page` (int, optional) - default: 1
@@ -44,13 +166,14 @@ Get all products with pagination, sorting, and search.
 **Response:**
 ```json
 {
-  "products": [...],
-  "pagination": {
-    "page": 1,
-    "limit": 10,
-    "count": 100,
-    "maxPage": 10
-  }
+    "status": 200,
+    "message": "success get list product",
+    "data": [...],
+    "meta": {
+        "page": 1,
+        "limit": 10,
+        "max_page": 1,
+        "count": 3
+    }
 }
-
-You can try the API using this Postman collection: https://api.postman.com/collections/25822863-2feafd6d-19ff-40ce-a9d2-85d9024a6015?access_key=PMAT-01K0DD79WE6XQNMCJ1V119SSSP
+```
