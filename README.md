@@ -33,7 +33,7 @@ There are 2 ways to do running
 
 You can try the API using this Postman collection: https://api.postman.com/collections/25822863-2feafd6d-19ff-40ce-a9d2-85d9024a6015?access_key=PMAT-01K0DD79WE6XQNMCJ1V119SSSP
 
-### 1. **POST** `/api/v1/user
+### 1. **POST** `/api/v1/user`
 
 Register a new user.
 
@@ -62,7 +62,7 @@ Register a new user.
 }
 ```
 
-### 2. **POST** `/api/v1/user/login
+### 2. **POST** `/api/v1/user/login`
 
 Login to get access token and refresh token.
 
@@ -87,7 +87,7 @@ Login to get access token and refresh token.
 }
 ```
 
-### 3. **POST** `/api/v1/user/refresh
+### 3. **POST** `/api/v1/user/refresh`
 
 API Refresh token to get a new access token when expired.
 
