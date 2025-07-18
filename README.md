@@ -18,7 +18,7 @@ Mendefinisikan struktur data dan aturan bisnis dasar (entity) yang digunakan di 
 **5. Config & Middleware**
 Mengelola konfigurasi environment, koneksi database, Redis, serta middleware seperti authentication, logging, dan recovery.
 
-**Why Clean Architecture?**
+### Why Clean Architecture?
 Beberapa alasan memilih Clean Architecture:
 
 **1. Separation of Concerns**
