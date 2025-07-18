@@ -63,7 +63,7 @@ There are 2 ways to do running
 
 ## List API
 
-You can try the API using this Postman collection: https://restless-eclipse-481386.postman.co/workspace/My-Workspace~087b345e-e61b-4d8d-8e7c-67790b25a78b/collection/25822863-2feafd6d-19ff-40ce-a9d2-85d9024a6015?action=share&creator=25822863
+You can try the API using this Postman collection: https://api.postman.com/collections/25822863-2feafd6d-19ff-40ce-a9d2-85d9024a6015?access_key=PMAT-01K0DD79WE6XQNMCJ1V119SSSP
 
 ### 1. **POST** `/api/v1/user`
 
