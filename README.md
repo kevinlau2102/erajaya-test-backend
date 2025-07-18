@@ -29,3 +29,28 @@ There are 2 ways to do running
   make migrate-seed
   ```
 
+## List API
+### GET /products
+
+Get all products with pagination, sorting, and search.
+
+**Query Parameters:**
+- `page` (int, optional) - default: 1
+- `limit` (int, optional) - default: 10
+- `search` (string, optional)
+- `sortBy` (string: `name`, `price`, `created_at`)
+- `order` (string: `asc`, `desc`)
+
+**Response:**
+```json
+{
+  "products": [...],
+  "pagination": {
+    "page": 1,
+    "limit": 10,
+    "count": 100,
+    "maxPage": 10
+  }
+}
+
+You can try the API using this Postman collection: https://api.postman.com/collections/25822863-2feafd6d-19ff-40ce-a9d2-85d9024a6015?access_key=PMAT-01K0DD79WE6XQNMCJ1V119SSSP
